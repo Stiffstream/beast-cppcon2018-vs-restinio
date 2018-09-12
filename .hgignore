@@ -12,6 +12,7 @@ dev/fmt
 dev/fmt_mxxru
 dev/restinio
 dev/cmake_build*
+dev/cmake
 o/*
 ./wiki
 *.sublime-project
