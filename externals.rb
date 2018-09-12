@@ -8,5 +8,6 @@ MxxRu::arch_externals :restinio do |e|
   e.map_dir 'dev/fmt' => 'dev'
   e.map_dir 'dev/fmt_mxxru' => 'dev'
   e.map_dir 'dev/restinio' => 'dev'
+  e.map_dir 'dev/cmake' => 'dev'
 end
 
