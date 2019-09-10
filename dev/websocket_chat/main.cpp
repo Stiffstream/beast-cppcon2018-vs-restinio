@@ -137,7 +137,7 @@ auto serve_requested_file(
 		// RESTinio's sendfile functionality will be used here.
 		auto sf = restinio::sendfile( path );
 
-		if( restinio::http_method_t::http_head == req->header().method() )
+		if( restinio::http_method_head() == req->header().method() )
 			// Handle HTTP HEAD request. Only file length should be returned.
 			return req->create_response< restinio::user_controlled_output_t >()
 					.append_header( restinio::http_field::server, "RESTinio" )
@@ -173,8 +173,8 @@ auto handle_ordinary_request(
 	restinio::request_handle_t & req )
 {
 	// Only HTTP GET and HEAD are supported.
-	if( restinio::http_method_t::http_get != req->header().method() &&
-			restinio::http_method_t::http_head != req->header().method() )
+	if( restinio::http_method_get() != req->header().method() &&
+			restinio::http_method_head() != req->header().method() )
 		return mk_negative_resp(
 				req, restinio::status_method_not_allowed() );
 

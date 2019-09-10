@@ -12,9 +12,9 @@ To prove our point of view we have created a reimplementation of Vinnie's exampl
 
 We do not have a goal to create a side-by-side comparison between Beast-based and RESTinio-based solutions. This comparison is left as an exercise for a reader :)
 
-Seriously speaking the best way to feel the difference is to study Beast-based solution and then compare it with RESTinio-based one. Look to the code. For example, look at [the most important part of main() function in Vinnie's code](https://github.com/vinniefalco/CppCon2018/blob/cfa005305bf4b4e42ea886a6afd989d057f69605/main.cpp#L40-L60). And then to [the same part in our code](https://bitbucket.org/sobjectizerteam/beast-cppcon2018-vs-restinio/src/fb97378b1f839c1adbe35bb7de491a1857bf6877/dev/websocket_chat/main.cpp#lines-68:221).
+Seriously speaking the best way to feel the difference is to study Beast-based solution and then compare it with RESTinio-based one. Look to the code. For example, look at [the most important part of main() function in Vinnie's code](https://github.com/vinniefalco/CppCon2018/blob/cfa005305bf4b4e42ea886a6afd989d057f69605/main.cpp#L40-L60). And then to [the same part in our code](https://github.com/Stiffstream/beast-cppcon2018-vs-restinio/blob/db8fa3fed81725cbe5a9c66040f7eb19fceb6494/dev/websocket_chat/main.cpp#L68-L221).
 
-You can also take a look at request-processing code. In [Beast-based solution](https://github.com/vinniefalco/CppCon2018/blob/cfa005305bf4b4e42ea886a6afd989d057f69605/http_session.cpp#L83-L293). And then in [our solution](https://bitbucket.org/sobjectizerteam/beast-cppcon2018-vs-restinio/src/fb97378b1f839c1adbe35bb7de491a1857bf6877/dev/websocket_chat/main.cpp#lines-234:247).
+You can also take a look at request-processing code. In [Beast-based solution](https://github.com/vinniefalco/CppCon2018/blob/cfa005305bf4b4e42ea886a6afd989d057f69605/http_session.cpp#L83-L293). And then in [our solution](https://github.com/Stiffstream/beast-cppcon2018-vs-restinio/blob/db8fa3fed81725cbe5a9c66040f7eb19fceb6494/dev/websocket_chat/main.cpp#L234-L247).
 
 ## What Do We Think?
 
@@ -35,13 +35,13 @@ A C++ compiler with C++14 support is required.
 
 ## Obtaining Sources
 
-Just use` hg clone` command to download example's sources.
+Just use `git clone` command to download example's sources.
 
-```{.sh}
-hg clone https://bitbucket.org/sobjectizerteam/beast-cppcon2018-vs-restinio
+```sh
+git clone https://github.com/Stiffstream/beast-cppcon2018-vs-restinio
 ```
 
-You can also download a tarball with example's sources from a [Downloads](https://bitbucket.org/sobjectizerteam/beast-cppcon2018-vs-restinio/downloads/) section. That tarball already contains all necessary dependencies.
+You can also download a tarball with example's sources from a [Releases](https://github.com/Stiffstream/beast-cppcon2018-vs-restinio/releases) section. That tarball already contains all necessary dependencies.
 
 ## Building
 
@@ -59,7 +59,7 @@ You need [Docker](https://www.docker.com/) installed.
 
 Enter into example's folder and run docker build command:
 
-```{.sh}
+```sh
 cd beast-cppcon-2018-vs-restinio
 docker build -t websocket_chat .
 ```
@@ -68,7 +68,7 @@ All necessary dependencies will be downloaded, configured and built inside Docke
 
 Then you can start Docker's image:
 
-```{.sh}
+```sh
 docker run -p 8080:8080 websocket_chat
 ```
 
@@ -76,9 +76,9 @@ docker run -p 8080:8080 websocket_chat
 
 CMake version 3.8.0 or above is required.
 
-The full source code of the example with all necessary dependencies must be downloaded as tarball from [Downloads](https://bitbucket.org/sobjectizerteam/beast-cppcon2018-vs-restinio/downloads/) section. Then (_XYZ_ is a precise version of tarball):
+The full source code of the example with all necessary dependencies must be downloaded as tarball from [Releases](https://github.com/Stiffstream/beast-cppcon2018-vs-restinio/releases) section. Then (_XYZ_ is a precise version of tarball):
 
-```{.sh}
+```sh
 tar xaf beast-cppcon2018-vs-restinio-XYZ.tar.bz2
 cd beast-cppcon2018-vs-restinio/dev
 mkdir cmake_build
@@ -94,7 +94,7 @@ cmake --build . --config Release --target install
 
 To build the example from repository you need to install Mxx_ru 1.6.14.5 or above:
 
-```{.sh}
+```sh
 apt-get install ruby
 gem install Mxx_ru
 ```
@@ -103,15 +103,15 @@ Mxx_ru helps to download necessary dependencies and used as a build tool.
 
 Clone repo and download dependencies:
 
-```{.sh}
-hg clone https://bitbucket.org/sobjectizerteam/beast-cppcon-2018-vs-restinio
+```sh
+git clone https://github.com/Stiffstream/beast-cppcon2018-vs-restinio
 cd beast-cppcon-2018-vs-restinio
 mxxruexternals
 ```
 
 Once you get example's sources and its dependencies you can build it.
 
-```{.sh}
+```sh
 # Start with repository root directory
 cd dev
 # Build.
@@ -119,7 +119,7 @@ ruby build.rb --mxx-cpp-release
 # See websocket_chat_app in 'target/release' directory.
 ```
 
-Or you can download a tarball with all dependencies from from [Downloads](https://bitbucket.org/sobjectizerteam/beast-cppcon2018-vs-restinio/downloads/) section. Then (_XYZ_ is a precise version of tarball):
+Or you can download a tarball with all dependencies from from [Releases](https://github.com/Stiffstream/beast-cppcon2018-vs-restinio/releases) section. Then (_XYZ_ is a precise version of tarball):
 
 ```{.sh}
 tar xaf beast-cppcon2018-vs-restinio-XYZ.tar.bz2
@@ -139,3 +139,4 @@ For the license of asio library see COPYING file in asio distributive.
 For the license of nodejs/http-parser library see LICENSE file in nodejs/http-parser distributive.
 
 For the license of fmtlib see LICENSE file in fmtlib distributive.
+
